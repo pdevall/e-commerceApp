@@ -1,0 +1,669 @@
+body {
+  line-height: 1.5em;
+  font-size: 9pt;
+  font-family: 'Verdhana', sans-serif;
+  padding:0;
+  margin:0;
+}
+
+
+#outerDiv {
+	/**
+	* IE 8
+	*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(
+        gradientType=0,startColorStr=#15317E,
+        endColorStr=#413839);
+	/**
+	* Chrome
+	*/
+	background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#15317E), to(#413839));
+
+	/**
+	* Mozilla
+	*/
+	background: -moz-linear-gradient(top, #15317E, #413839);
+
+	/**
+	* IE 7
+	*/
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr=#15317E, endColorstr=#413839);
+	height:100px;
+	position:relative;
+	border-bottom: solid 2px #26B5D9;
+}
+
+
+#mainContainer {
+	margin: 0 auto 0 auto;
+	width: 1000px;
+	padding: 0px;
+	top:-102px;
+	position:relative;
+} 
+
+#bodyContainer {
+	width: 1000px;
+	padding: 0;
+} 
+
+#header {
+	height:58px;
+	margin: 0;
+	padding:0;
+} 
+
+#headerMenu {
+  width: 1000px;
+  margin: 0 auto;
+  border-top: solid 1px #1B7F98;
+  position: relative;
+  border-bottom: solid 1px #26B5D9;
+  line-height: 40px;
+  background:   #26C3EA;  
+  left: 0;
+  height: 40px;
+  z-index:1;
+}
+
+#headerMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 1px 0px 3px 2px;
+}
+
+#headerMenu ul li {
+  	display: inline;
+}
+
+#headerMenu ul li.first-item {
+ 	padding-left: 0;
+}
+
+#contentContainer {
+	margin: 0 auto 0 auto;
+	width: 1000px;
+	padding: 0;
+	position:relative;
+}
+
+#bread {
+	padding: 5px 0 0 0;
+	width: 1000px;
+	height: auto;
+	float: left;
+}
+
+#sidebar {
+	width: 200px;
+	height: auto;
+	float: left;
+	padding: 5px 0 0 0;
+} 
+
+#content {
+	width: 800px;
+	padding: 5px 0 0 0px;
+	float: left;
+	min-height:350px;
+} 
+
+#contentBody {
+	width: 780px;
+	float: right;
+}
+
+#footerContainer {
+	margin: 0 auto 0 auto;
+	padding: 0;
+	clear:both;
+} 
+
+#footerDiv {
+	
+	/**
+	* IE 8
+	*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(
+        gradientType=0,startColorStr=#616D7E,
+        endColorStr=#0A0A2A);
+	/**
+	* Chrome
+	*/
+	background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#6D7B8D), to(#0A0A2A));
+
+	/**
+	* Mozilla
+	*/
+	background: -moz-linear-gradient(top, #616D7E, #0A0A2A);
+
+	/**
+	* IE 7
+	*/
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr=#616D7E, endColorstr=#0A0A2A);
+
+	min-height:150px;
+	margin: 0 auto 0 auto;
+	padding: 0px;
+	border-top: solid 2px #FBF5EF;
+	color:white;
+}
+
+.menu {height:37px; position:relative; z-index:100; font-family:arial, sans-serif;}
+
+/* remove all the bullets, borders and padding from the default list styling */
+.menu ul.mainul {padding:0;list-style-type:none; width:200px; }
+/* float the list to make it horizontal and a relative positon so that you can control the dropdown menu positon */
+.menu ul.mainul li.parentli {float:left;width:200px;position:relative;
+							 margin: 0 0 0 -1px; border-right:1px solid #FFFF00; 
+							 border-bottom:1px solid #FFFF00;
+							 background: #FFE87C;}
+							
+/* style the links for the top level */
+.menu ul.mainul li.parentli p.menup {  margin:0;display:block;font-size:12px;text-decoration:none; 
+							color:#150517; width:189px; height:30px; border-top: 1px solid #FFFF00; 
+							cursor:default;   
+							border-left: 1px solid #FFFF00; border-width:1px 0 1px 1px;
+							padding-left:10px; padding-top:5px; line-height:29px; font-weight:bold; }							
+
+.menu ul.mainul ul.menuul {width:200px;}
+
+
+/* style the second level background */
+.menu ul.mainul ul.menuul p.drop {
+							display:block;font-size:12px;text-decoration:none; margin:0; cursor:default;
+							color:#150517; width:189px; height:31px; border-top: 1px solid #FFFF00;   
+							border-left: 1px solid #FFFF00; border-width:1px 0 1px 1px;
+							padding-left:10px; padding-top:5px; line-height:15px; font-weight:bold; 
+							background:#FAFAD2 url(../images/grey-arrow.gif) no-repeat 179px center;}
+
+/* style the second level hover */
+.menu ul.mainul ul.menuul p.drop:hover{color:#FFFAF0;background:#c9ba65 url(../images/blue-arrow.gif) no-repeat 179px center;}
+
+.menu ul.mainul ul.menuul :hover > p.drop {color:#FFFAF0;background:#c9ba65 url(../images/blue-arrow.gif) no-repeat 179px center;}
+
+
+/* hide the sub levels and give them a positon absolute so that they take up no room */
+.menu ul.mainul ul.menuul {visibility:hidden; position:absolute;height:0;top:36px;left:-1px; width:199px;}
+
+
+/* style the table so that it takes no ppart in the layout - required for IE to work */
+.menu table.menuTable {position:absolute; top:0; left:0; border-collapse:collapse;}
+
+
+.menu ul.mainul ul.menuul ul#secondul {position:absolute; left:195px; top:-1px; z-index:101; border-right: 2px solid #FFFF00;}
+.menu ul.mainul ul.menuul ul#secondul p.seconddrop {
+							display:block;font-size:12px;text-decoration:none; margin:0; cursor:default;
+							color:#150517; width:189px; height:31px; border-top: 1px solid #FFFF00;
+							border-bottom: 1px solid #FFFF00;  
+							border-left: 1px solid #FFFF00; border-width:1px 0 1px 1px;
+							padding-left:10px; padding-top:5px; line-height:15px; font-weight:bold; 
+							background:#FAFAD2 url(../images/grey-arrow.gif) no-repeat 179px center;}
+							
+/* style the second level hover */
+.menu ul.mainul ul.menuul ul#secondul p.seconddrop:hover{color:#FFFAF0;background:#c9ba65 url(../images/blue-arrow.gif) no-repeat 179px center;}
+.menu ul.mainul ul.menuul ul#secondul :hover > p.seconddrop {color:#FFFAF0;background:#c9ba65 url(../images/blue-arrow.gif) no-repeat 179px center;}
+.menu ul.mainul ul.menuul ul#childul {position:absolute; left:195px; top:-1px; z-index:101; border-right: 2px solid #FFFF00;}
+
+.menu ul.mainul ul.menuul ul#childul li#childli{							
+							background: #F0FFF0;
+							display:block;
+							font-size:12px;
+							text-decoration:none; 
+							color:#150517; width:500px; height:400px; 
+							border-top: 2px solid #FFFF00;
+							border-bottom: 2px solid #FFFF00; 
+							border-left: 2px solid #FFFF00;							
+							border-width:1px 0 1px 1px;
+							padding-left:10px; 
+							padding-top:5px; 
+							line-height:29px; font-weight:bold;}
+							
+.menu ul.mainul ul.menuul ul#childul li#childli1{							
+							background: #F0FFF0;
+							display:block;
+							font-size:12px;
+							text-decoration:none; 
+							color:#150517; width:300px; height:100px; 
+							border-top: 2px solid #FFFF00;
+							border-bottom: 2px solid #FFFF00; 
+							border-left: 2px solid #FFFF00;							
+							border-width:1px 0 1px 1px;
+							padding-left:10px; 
+							padding-top:5px; 
+							line-height:29px; font-weight:bold;}							
+
+/* style the top level hover */
+.menu p.menup:hover, .menu ul.mainul ul.menuul p.menup:hover{color:#000; background:#FFDE5E;}
+.menu :hover > p.menup, .menu ul.mainul ul.menuul :hover > p.menup {color:#000; background:#FFDE5E;}
+
+
+/* make the second level visible when hover on first level list OR link */
+.menu ul.mainul li.parentli:hover ul.menuul, .menu ul.mainul p.menup:hover ul.menuul{visibility:visible;}
+/* keep the third level hidden when you hover on first level list OR link */
+.menu ul :hover ul ul{visibility:hidden;}
+
+/* make the third level visible when you hover over second level list OR link */
+.menu ul :hover ul :hover ul{ visibility:visible;}
+
+.menu ul :hover ul :hover ul ul{ visibility:hidden;}
+
+.menu ul :hover ul :hover ul :hover ul{ visibility:visible;}
+
+.menu table.childTable {
+	cellspacing:0px;
+	cellpadding:0px;
+	line-height:15px;
+	font-size:11px;
+	font-weight:normal;
+}
+
+.menu table.childTable td {
+	width:150px;
+	text-align: left;
+	padding-left:10px;
+	valign:top;
+}
+
+.menu table.childTable th {
+	width:150px;
+	background: #DCDCDC;
+	text-align: left;
+	line-height:15px;
+	padding-left: 10px;
+	font-size:12px;
+}
+
+.menu table.childTable a {
+	text-decoration: none;
+}
+
+.menu table.childTable a:hover {
+	text-decoration: underline;
+}
+
+.searchClass {
+	float: left;
+
+}
+
+.searchClass label {
+	font-weight: bold;
+	font-size: 15px;
+	color: white;
+}
+
+.searchClass select {
+   	width: 175px;
+}
+
+.searchClass input.buttonClass {
+font-weight:bold;
+padding:5px 7px 5px 7px;
+}
+
+
+
+#vertmenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	width: 200px;
+	padding: 0px;
+	margin: 0px;
+	border: 1px solid #C39C4E;
+}
+
+#vertmenu h1 {
+	display: block; 
+	background-color:#FF9900;
+	font-size: 90%; 
+	padding: 3px 0 5px 10px;
+	border: 1px solid #000000;
+	color: #333333;
+	margin: 0px;
+	width:189px;
+}
+
+#vertmenu ul {
+	SCROLLBAR-FACE-COLOR: #FF9900; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFAF0; 
+	SCROLLBAR-SHADOW-COLOR: #FFFAF0; 
+	SCROLLBAR-3DLIGHT-COLOR: #FFFAF0; 
+	SCROLLBAR-ARROW-COLOR: #FFFAF0; 
+	SCROLLBAR-TRACK-COLOR: #FFFAF0;
+	SCROLLBAR-DARKSHADOW-COLOR: #FFFAF0;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	overflow: auto;
+	height: 200px;
+}
+
+#vertmenu ul li {
+	margin: 0px;
+	padding: 0px;
+}
+
+#vertmenu ul li a {
+	font-size: 100%;
+	display: block;
+	padding: 5px 0px 2px 11px;
+	text-decoration: none;
+	color: #6666FF;
+	width:172px;
+	font-weight: bold;	
+}
+
+#vertmenu ul li a:hover, #vertmenu ul li a:focus {
+	color: #000000;
+	background-color: #E6E6FA;
+	text-decoration: underline;
+}
+
+
+ul::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+ul::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+ul::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #FF9900; 
+     
+}
+
+.errorMsg{
+	padding:2px 4px;
+	margin:0px;
+	border:solid 1px #FBD3C6;
+	background:#FDE4E1;
+	color:#CB4721;
+	font-family:Verdhana sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+}
+
+.successMsg {
+	padding:2px 4px;
+	margin:0px;
+	border:solid 1px #C0F0B9;
+	background:#D5FFC6;
+	color:#48A41C;
+	font-family:Verdhana sans-serif; 
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+}
+
+#ajaxPopUp {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#ajaxPopUp .title {
+ 	height: 20px;
+	background-color:#26C3EA;
+	font-size: 12px; 
+	font-weight: bold;
+	padding: 3px 0 5px 10px;
+	border: 1px solid #F5FBEF;
+	color: #F5FBEF;
+	margin: 0px;
+}
+
+#ajaxPopUp .content {
+	font-size: 12px; 
+	padding: 3px 10px 5px 10px;
+	border: 1px solid #C39C4E;
+	text-align: left;
+}
+
+.content font.ajaxFont {
+	font-size: 12px;
+	color: #C39C4E;
+	font-weight: bold;
+}
+
+/* Home Page CSS */
+div#results {
+	width: 780px;
+	height: auto;
+}
+
+div.resultsHeadingContent {
+	width: 780px;
+	min-height: 20px;
+	border: 1px solid #C39C4E;
+	border-bottom: 4px solid #26B5D9;
+}
+
+div.resultsAltHeadingContent {
+	width: 780px;
+	min-height: 20px;
+	border-bottom: 4px solid #26B5D9;
+}
+
+div.divHeading {
+	padding: 5px 5px 0px 10px;
+}
+
+div.divHeading table {
+	width: 100%;
+}
+div.divHeading td.firstChild{
+	text-align: left;
+}
+div.divHeading td.secondChild {
+	text-align:right;
+}
+/* Home Page CSS */
+
+div.divHeading font {
+	color:#f78d1d;
+	font-size:16px;
+	font-weight: bold;
+}
+
+div.divHeading a{
+	font-size:10px;
+	text-decoration: none;
+}
+
+div.divHeading a:hover {
+	text-decoration: underline;
+}
+
+div.resultsMainContent {
+	width: 780px;
+	min-height: 180px;
+	border-left: 1px solid #C39C4E;
+	border-right: 1px solid #C39C4E;
+	border-bottom: 1px solid #C39C4E;
+}
+
+div.resultsAltMainContent {
+	width: 780px;
+	min-height: 180px;
+}
+
+.boxContent {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.boxContent table {
+}
+
+.boxContent a img {
+	border: none;
+}
+
+.boxContent a {
+	text-decoration: none;
+}
+.boxContent font {
+	color: #2E64FE;
+	font-size: 12px;
+}
+
+.viewAllButton {
+    border: 1px solid #006;
+    background: #ccf;
+}
+.viewAllButton:hover {
+    border: 1px solid #f00;
+    background: #eef;
+    cursor: pointer;
+}
+
+
+.boxContent font.cost {
+	color: #FE2E2E;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.boxContent font.discountCost {
+	color: #3B3131;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+
+#productDetails {
+}
+
+#productDetails table.productInnerTable {
+	margin: 10px;
+}
+
+#productDetails font.heading {
+	color: #150517;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#productDetails font.springLabel {
+	color:#993333;
+	font-weight: bold;
+}
+
+font.springLabel {
+	color:#993333;
+	font-weight: bold;
+}
+
+font.price {
+	color:#FE2E2E;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#productDetails font.stock {
+	color:#52D017;
+	font-size: 18px;
+}
+
+#productDetails font.stockRed {
+	color:#FE2E2E;
+	font-size: 18px;
+}
+
+font.discount {
+	color:#4C7D7E;
+	font-size: 14px;
+}
+
+font.deliveryLabel {
+	color:#993333;
+	font-weight: bold;
+	font-style:italic;
+}
+
+.shoppingCart{
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.shoppingCartHead {
+    text-align: center;
+    font-weight: bold;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    background: #4a70aa;
+    color: #FFFFFF;
+}
+
+.shoppingCartTd{
+    text-align: center;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    background: #e3f0f7;
+    font-size:10pt; 
+    color:Black; 
+    font-family:verdana,sans-serif;
+}
+
+.shoppingCartTdAlt{
+	text-align: center;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    background: #f7f7f7;
+    font-size:10pt; 
+    color:Black; 
+    font-family:verdana,sans-serif;
+}
+
+.cartButton {
+   background:#da5867; 
+   color: #FFFFFF;  
+   height:31px;
+   border: solid 1px #b73948;
+}
+.cartButton:hover {
+    border: 1px solid #f00;
+    background: #eef;
+    cursor: pointer;
+    color: #0A0A2A;
+}
+
+.checkoutContent {
+	width: 800px;
+	min-height: 200px;
+}
+
+.checkoutContent table.checkoutTable {
+	width: 100%;
+	cellpadding: 0;
+	cellspacing: 0;
+}
+
+p.checkoutTitle {
+	font-size: 20px;
+	font-weight: bold;
+	color: #26C3EA;
+}
+
+p.checkoutPara {
+	font-size: 12px;
+	font-weight: bold;
+	color: #26C3EA;
+}
+
+.checkoutInput {
+	font-size: 12px;
+	font-weight: bold;
+	color: #26C3EA;
+}

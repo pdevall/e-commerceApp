@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+        
+	<bean id="userAccountDelegate" class="com.devalla.grocerieskart.delegate.impl.UserAccountDelegateImpl"/>
+	<bean id="homePageDelegate" class="com.devalla.grocerieskart.delegate.impl.HomePageDelegateImpl"/>
+	<bean id="productDisplayDelegate" class="com.devalla.grocerieskart.delegate.impl.ProductDisplayDelegateImpl"/>
+	<bean id="menuDelegate" class="com.devalla.grocerieskart.delegate.impl.MenuDelegateImpl"/>
+	<bean id="productDetailsDelegate" class="com.devalla.grocerieskart.delegate.impl.ProductDetailsDelegateImpl"/>
+	<bean id="glistDelegate" class="com.devalla.grocerieskart.delegate.impl.GListDelegateImpl"/>
+	<bean id="searchDelegate" class="com.devalla.grocerieskart.delegate.impl.SearchDelegateImpl"/>
+	<bean id="addressDelegate" class="com.devalla.grocerieskart.delegate.impl.AddressDelegateImpl"/>
+	<bean id="orderDelegate" class="com.devalla.grocerieskart.delegate.impl.OrderDelegateImpl"/>        
+
+</beans>

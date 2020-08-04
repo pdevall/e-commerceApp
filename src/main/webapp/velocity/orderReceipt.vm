@@ -1,0 +1,128 @@
+<html>
+<head>
+</head>
+<body style="width: 780px;margin: 0px;padding: 0;text-align: justify;font-family:  Tahoma, Arial, Helvetica, sans-serif;font-size: 11px;color: #696969;">
+<div style="border:2px solid red;
+			padding:5px 10px;
+			background:#FEFFEF;
+			width:780px;
+			border-radius:5px;
+			-moz-border-radius:5px;">
+<table width="100%">
+	<tr>
+		<td>
+			<img src='cid:logoImage'>
+		</td>
+		<td align="right">
+			#if( $date ) ${date} #end
+		</td>
+	</tr>
+</table>
+<hr />
+<br>
+<h3>Thank You for your order. #if( $userAccountInfo.customerFirstname ) ${userAccountInfo.customerFirstname} #end</h3>
+<p>If you need to check the status of your order, manage your account, Please visit the home page and go to Your Account by clicking the link on top of the page.</p>
+<br>
+<h3 style="	height: 20px;
+			margin-top: 0;
+			background: #01BBEC;
+			border: 1px solid #D6E6CC;
+			letter-spacing: -.5px;
+			color:  #FFFFFF;"
+			>Shipping Address</h3>
+<table>
+	<tr>
+		<td>				
+			<p style="font-size: 12px;font-weight: bold;color: #26C3EA;">
+				#if( $shoppingCartForm.selectedAddressDto.shipTo ) ${shoppingCartForm.selectedAddressDto.shipTo} #end<br>
+				#if( $shoppingCartForm.selectedAddressDto.address1 ) ${shoppingCartForm.selectedAddressDto.address1} #end #if( $shoppingCartForm.selectedAddressDto.address2) ${shoppingCartForm.selectedAddressDto.address2} #end<br>
+				#if( $shoppingCartForm.selectedAddressDto.city ) ${shoppingCartForm.selectedAddressDto.city} #end<br>
+				#if( $shoppingCartForm.selectedAddressDto.postalCode ) ${shoppingCartForm.selectedAddressDto.postalCode} #end<br>
+				#if( $shoppingCartForm.selectedAddressDto.stateName ) ${shoppingCartForm.selectedAddressDto.stateName} #end<br>
+				#if( $shoppingCartForm.selectedAddressDto.phoneNumber ) ${shoppingCartForm.selectedAddressDto.phoneNumber} #end<br>
+			</p>
+		</td>
+	</tr>
+</table>
+<h3 style="	height: 20px;
+			margin-top: 0;
+			background: #01BBEC;
+			border: 1px solid #D6E6CC;
+			letter-spacing: -.5px;
+			color:  #FFFFFF;"
+			>Payment Details</h3>
+<table>
+	<tr><td>			
+		<p style="font-size: 10px;color:#FE2E2E;font-weight: bold;">Payment Method</font> : <font style="font-size: 10px;color:black;">#if($shoppingCartForm.paymentTypeId == 1000) Cash on Delivery #elseif ($shoppingCartForm.paymentTypeId == 1001) Credit Cart #elseif($shoppingCartForm.paymentTypeId == 1002) Net Banking #end</p>
+	</td></tr>
+</table>
+		
+<h3 style="	height: 20px;
+			margin-top: 0;
+			background: #01BBEC;
+			border: 1px solid #D6E6CC;
+			letter-spacing: -.5px;
+			color:  #FFFFFF;"
+			>Order Details</h3>
+<table>
+	<tr><td>			
+		<p style="font-size: 10px;color:#FE2E2E;font-weight: bold;">Order Number</font> : <font style="font-size: 10px;color:black;">#if($shoppingCartForm.orderNumber)${shoppingCartForm.orderNumber}#end</p>
+	</td></tr>
+</table>			
+		
+<table width="780px" style="border-spacing: 0px;border-collapse: collapse;">
+	<tr>
+		<th style="text-align: center;font-weight: bold;padding: 2px;border: 2px solid #FFFFFF;background: #4a70aa;color: #FFFFFF;">Product</th>
+		<th style="text-align: center;font-weight: bold;padding: 2px;border: 2px solid #FFFFFF;background: #4a70aa;color: #FFFFFF;">Price</th>
+		<th style="text-align: center;font-weight: bold;padding: 2px;border: 2px solid #FFFFFF;background: #4a70aa;color: #FFFFFF;">Quantity</th>
+	</tr>
+	#foreach( $frontendProduct in $shoppingCartForm.shoppedProducts )
+		<tr>
+			<td width="480px" align="left" style="text-align: left;">
+				<font style="font-weight: bold;">${frontendProduct.productName}</font>
+			</td>
+			<td width="160px" style="text-align: center;padding: 2px;border: 2px solid #FFFFFF;background: #e3f0f7;font-size:10pt;color:Black;font-family:verdana,sans-serif;">
+				#if($frontendProduct.productCostAfterDiscount)
+					<font style="font-size: 10px;color:#FE2E2E;font-weight: bold;">Rs.&nbsp;${frontendProduct.productCostAfterDiscount}</font>
+				#{else}
+					<font style="font-size: 10px;color:#FE2E2E;font-weight: bold;">Rs.&nbsp;${frontendProduct.productCost}</font>					
+				#end
+				<br>
+				#if($frontendProduct.productDiscount)
+					#if($frontendProduct.productDiscount.discountPercent)
+					<font style="font-size: 10px;">Discount:</font>&nbsp;<font style="color: #3B3131;font-size: 10px;font-weight: normal;">${frontendProduct.productDiscount.discountPercent}%</font>
+					<br>
+					<font style="font-size: 10px;">You will Save(</font><font style="font-size: 10px;color:#FE2E2E;font-weight: bold;">Rs.&nbsp;${frontendProduct.discountCost}</font><font>)</font>
+					#end
+				#end
+			</td>
+			<td width="140px" style="text-align: center;padding: 2px;border: 2px solid #FFFFFF;background: #e3f0f7;font-size:10pt;color:Black;font-family:verdana,sans-serif;">
+				<font style="font-size: 10px;color:black;font-weight: bold;">${frontendProduct.frontendQuantity}</font>
+			</td>
+		</tr>
+	#end
+	<tr>
+		<td colspan="3">
+			<hr/>
+		</td>
+	</tr>
+	#if($shoppingCartForm.globalDiscount)
+		<tr>
+			<td colspan="3">
+				<font style="color:#993333;font-weight: bold;font-style:italic;">*An overall discount (${shoppingCartForm.globalDiscount.discountPercent}) will be applied at checkout.</font>
+			</td>
+		</tr>
+	#end
+	<tr>
+		<td align="right">
+			<font style="font-weight: bold;">Total Cost:</font>
+		</td>
+		<td align="center">
+			<font class="price">Rs.&nbsp;${shoppingCartForm.totalShoppingCostWithGlobalDiscount}</font>
+		</td>		
+	</tr>						
+</table>
+</div>
+  					
+</body>
+</html>

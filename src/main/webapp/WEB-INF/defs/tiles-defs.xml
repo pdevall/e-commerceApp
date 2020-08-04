@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+  <definition name="baseLayout" template="/view/layouts/classic.jsp">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Lentils, Cooking oil etc." />
+    <put-attribute name="header" value="/view/header.jsp" />
+    <put-attribute name="breadcrumb" value="/view/breadcrumb.jsp" />
+    <put-attribute name="sidemenu" value="/view/sidemenu.jsp" />
+    <put-attribute name="body" value="/view/index.jsp" />
+    <put-attribute name="footer" value="/view/footer.jsp" />
+  </definition>
+  
+  <definition name="noSideMenuLayout" template="/view/layouts/nosidemenulayout.jsp">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Lentils, Cooking oil etc." />
+    <put-attribute name="header" value="/view/header.jsp" />
+    <put-attribute name="body" value="/view/login.jsp" />
+    <put-attribute name="footer" value="/view/footer.jsp" />
+  </definition>
+  
+  <definition name="register" extends="noSideMenuLayout">
+  <put-attribute name="title" value="Groceries Kart: Register" />
+    <put-attribute name="body" value="/view/register.jsp" />
+  </definition> 
+   
+  <definition name="myAccount" extends="noSideMenuLayout">
+    <put-attribute name="title" value="Groceries Kart: MyAccount" />
+    <put-attribute name="body" value="/view/myAccount.jsp" />
+  </definition> 
+  
+  <definition name="error" extends="noSideMenuLayout">
+  	<put-attribute name="title" value="Groceries Kart: Error" />
+    <put-attribute name="body" value="/view/error.jsp" />
+  </definition>
+
+ <definition name="index" template="/view/layouts/rightsidemenulayout.jsp">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Lentils, Cooking oil etc." />
+    <put-attribute name="header" value="/view/header.jsp" /> 
+    <put-attribute name="breadcrumb" value="/view/breadcrumb.jsp" />
+    <put-attribute name="sidemenu" value="/view/sidemenu.jsp" />     
+    <put-attribute name="body" value="/view/index.jsp" />
+    <put-attribute name="footer" value="/view/footer.jsp" />
+  </definition>  
+  
+  <definition name="productDisplay" extends="baseLayout">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/productDisplay.jsp" />
+    <put-attribute name="sidemenu" value="/view/subcategory_sidemenu.jsp" />
+  </definition>
+  
+  <definition name="productDisplaySubCategory" extends="baseLayout">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/productDisplaySubCategory.jsp" />
+    <put-attribute name="sidemenu" value="/view/subcategory_brand_sidemenu.jsp" />
+  </definition>
+  
+   <definition name="productDetails" extends="index">
+    <put-attribute name="body" value="/view/productDetails.jsp" />
+   </definition>
+   
+  <definition name="shoppingKart" extends="baseLayout">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/shoppingKart.jsp" />
+    <put-attribute name="sidemenu" value="/view/category_sidemenu.jsp" />
+  </definition>
+  
+  <definition name="glistView" extends="baseLayout">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/glist.jsp" />
+    <put-attribute name="sidemenu" value="/view/category_sidemenu.jsp" />
+  </definition> 
+
+  <definition name="search" extends="baseLayout">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/search.jsp" />
+    <put-attribute name="sidemenu" value="/view/category_sidemenu.jsp" />
+  </definition> 
+  
+  <definition name="shippingAddress" extends="index">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/shipAddress.jsp" />
+    <put-attribute name="sidemenu" value="/view/shopKart.jsp" />
+  </definition>
+  
+  <definition name="preview" extends="index">
+    <put-attribute name="title" value="Groceries Kart: Online Grocery Shopping: Rice, Beverages, Flour etc." />
+    <put-attribute name="body" value="/view/preview.jsp" />
+    <put-attribute name="sidemenu" value="/view/shopKart.jsp" />
+  </definition>
+    
+</tiles-definitions>
